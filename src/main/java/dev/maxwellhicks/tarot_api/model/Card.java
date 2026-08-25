@@ -1,9 +1,12 @@
 package dev.maxwellhicks.tarot_api.model;
 
 import jakarta.persistence.*;
+import lombok.*;
 
-@Entity
-@Table(name = "card")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Card {
 
     @Id
@@ -22,13 +25,11 @@ public class Card {
 
     private Integer number;
 
-    @Column(length = 1000)
+    @Column(columnDefinition = "TEXT")
     private String uprightMeaning;
 
-    @Column(length = 1000)
+    @Column(columnDefinition = "TEXT")
     private String reversedMeaning;
 
     private String imageUrl;
-
-
 }
