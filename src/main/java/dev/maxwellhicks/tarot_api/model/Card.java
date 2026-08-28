@@ -3,6 +3,8 @@ package dev.maxwellhicks.tarot_api.model;
 import jakarta.persistence.*;
 import lombok.*;
 
+@Entity
+@Table(name = "card")
 @Getter
 @Setter
 @NoArgsConstructor
