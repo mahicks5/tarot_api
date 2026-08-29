@@ -1,0 +1,29 @@
+[
+  {
+    "name": "The Fool",
+    "arcanaType": "MAJOR",
+    "suit": null,
+    "number": 0,
+    "uprightMeaning": "New beginnings, innocence, spontaneity, a free spirit.",
+    "reversedMeaning": "Recklessness, risk-taking, foolishness, being taken advantage of.",
+    "imageUrl": null
+  },
+  {
+    "name": "The Magician",
+    "arcanaType": "MAJOR",
+    "suit": null,
+    "number": 1,
+    "uprightMeaning": "Manifestation, resourcefulness, power, inspired action.",
+    "reversedMeaning": "Manipulation, poor planning, untapped talents.",
+    "imageUrl": null
+  },
+  {
+    "name": "Ace of Cups",
+    "arcanaType": "MINOR",
+    "suit": null,
+    "number": 1,
+    "uprightMeaning": "New feelings, spirituality, intuition.",
+    "reversedMeaning": "Emotional loss, blocked creativity, emptiness.",
+    "imageUrl": null
+  }
+]
