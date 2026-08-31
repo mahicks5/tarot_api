@@ -22,17 +22,6 @@ public class CardService {
         return cardRepository.findAll();
     }
 
-    public Card getRandomCard() {
-        List<Card> allCards = cardRepository.findAll();
-
-        if (allCards.isEmpty()) {
-            throw new IllegalStateException("No cards available in the database.");
-        }
-
-        int randomIndex = ThreadLocalRandom.current().nextInt(allCards.size());
-        return allCards.get(randomIndex);
-    }
-
     public List<Card> drawRandomCards(int n) {
         List<Card> allCards = new ArrayList<>(cardRepository.findAll());
 
