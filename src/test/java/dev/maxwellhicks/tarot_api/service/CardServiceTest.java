@@ -37,4 +37,43 @@ public class CardServiceTest {
 
         assertEquals(2, result.size());
     }
+
+    @Test
+    void drawRandomCards_throwsWhenRequestingTooMany() {
+        List<Card> fakeCards = List.of(
+                new Card(1L, "The Fool", ArcanaType.MAJOR, null, 0, "up", "down", null),
+                new Card(2L, "The Magician", ArcanaType.MAJOR, null, 1, "up", "down", null),
+                new Card(3L, "Ace of Cups", ArcanaType.MINOR, Suit.CUPS, 1, "up", "down", null)
+        );
+
+        when(cardRepository.findAll()).thenReturn(fakeCards);
+
+        assertThrows(IllegalArgumentException.class, () -> cardService.drawRandomCards(10));
+    }
+
+    @Test
+    void drawRandomCards_throwsWhenRequestingTooLittle() {
+        List<Card> fakeCards = List.of(
+                new Card(1L, "The Fool", ArcanaType.MAJOR, null, 0, "up", "down", null),
+                new Card(2L, "The Magician", ArcanaType.MAJOR, null, 1, "up", "down", null),
+                new Card(3L, "Ace of Cups", ArcanaType.MINOR, Suit.CUPS, 1, "up", "down", null)
+        );
+
+        when(cardRepository.findAll()).thenReturn(fakeCards);
+
+        assertThrows(IllegalArgumentException.class, () -> cardService.drawRandomCards(-3));
+    }
+
+    @Test
+    void drawRandomCards_throwsWhenRequestingZero() {
+        List<Card> fakeCards = List.of(
+                new Card(1L, "The Fool", ArcanaType.MAJOR, null, 0, "up", "down", null),
+                new Card(2L, "The Magician", ArcanaType.MAJOR, null, 1, "up", "down", null),
+                new Card(3L, "Ace of Cups", ArcanaType.MINOR, Suit.CUPS, 1, "up", "down", null)
+        );
+
+        when(cardRepository.findAll()).thenReturn(fakeCards);
+
+        assertThrows(IllegalArgumentException.class, () -> cardService.drawRandomCards(0));
+    }
 }
